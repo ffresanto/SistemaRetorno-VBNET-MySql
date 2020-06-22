@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icone.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Calendario">
       <HintPath>.\Calendario.dll</HintPath>
@@ -78,10 +81,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexaoDB.vb" />
+    <Compile Include="frmAdd.Designer.vb">
+      <DependentUpon>frmAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlterar.Designer.vb">
+      <DependentUpon>frmAlterar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlterar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConcl.Designer.vb">
+      <DependentUpon>frmConcl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConcl.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDashboard.Designer.vb">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeletar.Designer.vb">
+      <DependentUpon>frmDeletar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeletar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -102,6 +129,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="My Project\frmConcluido.Designer.vb">
+      <DependentUpon>frmConcluido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\frmConcluido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,14 +147,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAdd.resx">
+      <DependentUpon>frmAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlterar.resx">
+      <DependentUpon>frmAlterar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConcl.resx">
+      <DependentUpon>frmConcl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeletar.resx">
+      <DependentUpon>frmDeletar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplash.resx">
       <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\frmConcluido.resx">
+      <DependentUpon>frmConcluido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -144,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icone.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

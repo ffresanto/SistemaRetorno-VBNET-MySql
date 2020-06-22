@@ -1,6 +1,9 @@
-﻿Public Class frmDashboard
+﻿Imports MySql.Data.MySqlClient
+
+Public Class frmDashboard
     Private x, y As Integer
     Private newpoint As Point
+
 
     Private Sub Btn_Sair_Click(sender As Object, e As EventArgs) Handles Btn_Sair.Click
         Me.Close()
@@ -73,6 +76,10 @@
 
     End Sub
 
+    Private Sub Dgv_Geral_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Geral.CellContentClick
+
+    End Sub
+
     Private Sub Pnl_Ddsretorno_MouseMove(sender As Object, e As MouseEventArgs) Handles Pnl_Ddsretorno.MouseMove
         If e.Button = MouseButtons.Left Then
             newpoint = Control.MousePosition
@@ -82,4 +89,58 @@
             Application.DoEvents()
         End If
     End Sub
+
+    Private Sub Btn_Adicionar_Click(sender As Object, e As EventArgs) Handles Btn_Adicionar.Click
+        frmAdd.Show()
+    End Sub
+
+    Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Listar()
+    End Sub
+
+    Private Sub Btn_Alterar_Click(sender As Object, e As EventArgs) Handles Btn_Alterar.Click
+        frmAlterar.Show()
+    End Sub
+
+    Private Sub Btn_Remove_Click(sender As Object, e As EventArgs) Handles Btn_Remove.Click
+        frmDeletar.Show()
+    End Sub
+
+    Private Sub Btn_Concluido_Click(sender As Object, e As EventArgs) Handles Btn_Concluido.Click
+        frmConcl.Show()
+    End Sub
+
+    Public Sub Listar()
+        Try
+            Dim conectar As New conexaoDB()
+            Dim strSQL As String = ""
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable
+
+
+            strSQL = "SELECT ITEM_BACKLOG AS 'ITEM', NOME, EMPRESA, OBS AS 'DETALHES', TELEFONE, DATA_RETORNO AS 'DATA DE RETORNO' FROM tb_cliente t;"
+
+            da = New MySqlDataAdapter(strSQL, conectar.conexao)
+            da.Fill(dt)
+            Dgv_Geral.DataSource = dt
+
+            For i = 0 To Dgv_Geral.Rows.Count - 1
+                Dgv_Geral.Rows(i).Height = 50
+            Next
+            Dim x As Integer = Dgv_Geral.Rows.Count
+            Txt_Total.Text = CInt(x) - 1
+
+            Dgv_Geral.Columns.Item("ITEM").Width = 60
+            Dgv_Geral.Columns.Item("EMPRESA").Width = 90
+            Dgv_Geral.Columns.Item("TELEFONE").Width = 100
+            Dgv_Geral.Columns.Item("DATA DE RETORNO").Width = 200
+            Dgv_Geral.Columns.Item("NOME").Width = 120
+
+
+        Catch ex As Exception
+
+        Finally
+        End Try
+    End Sub
+
 End Class

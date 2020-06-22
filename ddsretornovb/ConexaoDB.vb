@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class conexaoDB
-    Public conexao As New MySqlConnection("Server=localhost;Port=3307;Database=db_ddsretorno;Uid=ddsinfo;Pwd=dds21231;")
+    Public conexao As New MySqlConnection("Server=localhost;Port=3307;Database=db_nomebanco;Uid=seu_usuario;Pwd=sua_senha;")
     Public Sub abrir()
         Try
             If conexao.State = 0 Then

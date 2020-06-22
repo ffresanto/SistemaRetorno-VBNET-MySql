@@ -85,7 +85,7 @@ Public Class frmLogin
                     Txt_Usuario.Focus()
                 Else
                     frmSplash.Show()
-                    Me.Close()
+                    Me.Hide()
                 End If
             End If
         Catch ex As Exception

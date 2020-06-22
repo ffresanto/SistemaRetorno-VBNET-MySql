@@ -22,21 +22,28 @@ Partial Class frmDashboard
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.Pnl_Principal = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Txt_Total = New System.Windows.Forms.Label()
+        Me.Lbl_Geral = New System.Windows.Forms.Label()
+        Me.Dgv_Geral = New System.Windows.Forms.DataGridView()
         Me.Pnl_Superior = New System.Windows.Forms.Panel()
         Me.Btn_Minimizar = New System.Windows.Forms.Label()
         Me.Btn_Sair = New System.Windows.Forms.Label()
         Me.Pnl_Esquerda = New System.Windows.Forms.Panel()
-        Me.btn_Principal = New System.Windows.Forms.Button()
-        Me.Pnl_Ddsretorno = New System.Windows.Forms.Panel()
-        Me.Lbl_Copyright = New System.Windows.Forms.Label()
-        Me.Btn_Logout = New System.Windows.Forms.Button()
-        Me.Btn_Adicionar = New System.Windows.Forms.Button()
-        Me.Btn_Alterar = New System.Windows.Forms.Button()
-        Me.Btn_Remove = New System.Windows.Forms.Button()
         Me.Btn_Concluido = New System.Windows.Forms.Button()
+        Me.Btn_Remove = New System.Windows.Forms.Button()
+        Me.Btn_Alterar = New System.Windows.Forms.Button()
+        Me.Btn_Adicionar = New System.Windows.Forms.Button()
+        Me.Btn_Logout = New System.Windows.Forms.Button()
+        Me.Lbl_Copyright = New System.Windows.Forms.Label()
+        Me.Pnl_Ddsretorno = New System.Windows.Forms.Panel()
         Me.Pnl_Principal.SuspendLayout()
+        CType(Me.Dgv_Geral, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pnl_Superior.SuspendLayout()
         Me.Pnl_Esquerda.SuspendLayout()
         Me.SuspendLayout()
@@ -44,6 +51,10 @@ Partial Class frmDashboard
         'Pnl_Principal
         '
         Me.Pnl_Principal.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Pnl_Principal.Controls.Add(Me.Label2)
+        Me.Pnl_Principal.Controls.Add(Me.Txt_Total)
+        Me.Pnl_Principal.Controls.Add(Me.Lbl_Geral)
+        Me.Pnl_Principal.Controls.Add(Me.Dgv_Geral)
         Me.Pnl_Principal.Controls.Add(Me.Pnl_Superior)
         Me.Pnl_Principal.Controls.Add(Me.Pnl_Esquerda)
         Me.Pnl_Principal.Dock = System.Windows.Forms.DockStyle.Fill
@@ -51,6 +62,80 @@ Partial Class frmDashboard
         Me.Pnl_Principal.Name = "Pnl_Principal"
         Me.Pnl_Principal.Size = New System.Drawing.Size(1080, 737)
         Me.Pnl_Principal.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
+        Me.Label2.Location = New System.Drawing.Point(676, 702)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(333, 26)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "TOTAL DE RETORNOS RESTANTE:"
+        '
+        'Txt_Total
+        '
+        Me.Txt_Total.AutoSize = True
+        Me.Txt_Total.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Txt_Total.Location = New System.Drawing.Point(1005, 702)
+        Me.Txt_Total.Name = "Txt_Total"
+        Me.Txt_Total.Size = New System.Drawing.Size(24, 26)
+        Me.Txt_Total.TabIndex = 4
+        Me.Txt_Total.Text = "0"
+        '
+        'Lbl_Geral
+        '
+        Me.Lbl_Geral.AutoSize = True
+        Me.Lbl_Geral.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Geral.ForeColor = System.Drawing.Color.DimGray
+        Me.Lbl_Geral.Location = New System.Drawing.Point(243, 132)
+        Me.Lbl_Geral.Name = "Lbl_Geral"
+        Me.Lbl_Geral.Size = New System.Drawing.Size(63, 26)
+        Me.Lbl_Geral.TabIndex = 3
+        Me.Lbl_Geral.Text = "Geral"
+        '
+        'Dgv_Geral
+        '
+        Me.Dgv_Geral.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.Dgv_Geral.BackgroundColor = System.Drawing.Color.White
+        Me.Dgv_Geral.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_Geral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Geral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_Geral.ColumnHeadersHeight = 50
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Geral.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Geral.GridColor = System.Drawing.Color.White
+        Me.Dgv_Geral.Location = New System.Drawing.Point(246, 161)
+        Me.Dgv_Geral.Name = "Dgv_Geral"
+        Me.Dgv_Geral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Geral.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.Dgv_Geral.RowHeadersVisible = False
+        Me.Dgv_Geral.RowHeadersWidth = 60
+        Me.Dgv_Geral.Size = New System.Drawing.Size(822, 533)
+        Me.Dgv_Geral.TabIndex = 2
         '
         'Pnl_Superior
         '
@@ -95,51 +180,87 @@ Partial Class frmDashboard
         Me.Pnl_Esquerda.Controls.Add(Me.Btn_Adicionar)
         Me.Pnl_Esquerda.Controls.Add(Me.Btn_Logout)
         Me.Pnl_Esquerda.Controls.Add(Me.Lbl_Copyright)
-        Me.Pnl_Esquerda.Controls.Add(Me.btn_Principal)
         Me.Pnl_Esquerda.Controls.Add(Me.Pnl_Ddsretorno)
         Me.Pnl_Esquerda.Location = New System.Drawing.Point(0, 0)
         Me.Pnl_Esquerda.Name = "Pnl_Esquerda"
         Me.Pnl_Esquerda.Size = New System.Drawing.Size(237, 737)
         Me.Pnl_Esquerda.TabIndex = 0
         '
-        'btn_Principal
+        'Btn_Concluido
         '
-        Me.btn_Principal.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_Principal.FlatAppearance.BorderSize = 0
-        Me.btn_Principal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.btn_Principal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Principal.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Principal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.btn_Principal.Image = CType(resources.GetObject("btn_Principal.Image"), System.Drawing.Image)
-        Me.btn_Principal.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_Principal.Location = New System.Drawing.Point(0, 119)
-        Me.btn_Principal.Name = "btn_Principal"
-        Me.btn_Principal.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btn_Principal.Size = New System.Drawing.Size(237, 93)
-        Me.btn_Principal.TabIndex = 3
-        Me.btn_Principal.Text = "PRINCIPAL"
-        Me.btn_Principal.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_Principal.UseVisualStyleBackColor = True
+        Me.Btn_Concluido.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Concluido.FlatAppearance.BorderSize = 0
+        Me.Btn_Concluido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Btn_Concluido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Concluido.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Concluido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.Btn_Concluido.Image = CType(resources.GetObject("Btn_Concluido.Image"), System.Drawing.Image)
+        Me.Btn_Concluido.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Concluido.Location = New System.Drawing.Point(3, 416)
+        Me.Btn_Concluido.Name = "Btn_Concluido"
+        Me.Btn_Concluido.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Btn_Concluido.Size = New System.Drawing.Size(237, 93)
+        Me.Btn_Concluido.TabIndex = 10
+        Me.Btn_Concluido.Text = "CONCLUIDO"
+        Me.Btn_Concluido.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Concluido.UseVisualStyleBackColor = True
         '
-        'Pnl_Ddsretorno
+        'Btn_Remove
         '
-        Me.Pnl_Ddsretorno.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Pnl_Ddsretorno.BackgroundImage = CType(resources.GetObject("Pnl_Ddsretorno.BackgroundImage"), System.Drawing.Image)
-        Me.Pnl_Ddsretorno.Location = New System.Drawing.Point(0, 0)
-        Me.Pnl_Ddsretorno.Name = "Pnl_Ddsretorno"
-        Me.Pnl_Ddsretorno.Size = New System.Drawing.Size(237, 119)
-        Me.Pnl_Ddsretorno.TabIndex = 2
+        Me.Btn_Remove.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Remove.FlatAppearance.BorderSize = 0
+        Me.Btn_Remove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Btn_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Remove.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Remove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Btn_Remove.Image = CType(resources.GetObject("Btn_Remove.Image"), System.Drawing.Image)
+        Me.Btn_Remove.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Remove.Location = New System.Drawing.Point(3, 317)
+        Me.Btn_Remove.Name = "Btn_Remove"
+        Me.Btn_Remove.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Btn_Remove.Size = New System.Drawing.Size(237, 93)
+        Me.Btn_Remove.TabIndex = 8
+        Me.Btn_Remove.Text = "REMOVER"
+        Me.Btn_Remove.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Remove.UseVisualStyleBackColor = True
         '
-        'Lbl_Copyright
+        'Btn_Alterar
         '
-        Me.Lbl_Copyright.AutoSize = True
-        Me.Lbl_Copyright.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Copyright.ForeColor = System.Drawing.Color.White
-        Me.Lbl_Copyright.Location = New System.Drawing.Point(21, 714)
-        Me.Lbl_Copyright.Name = "Lbl_Copyright"
-        Me.Lbl_Copyright.Size = New System.Drawing.Size(195, 16)
-        Me.Lbl_Copyright.TabIndex = 4
-        Me.Lbl_Copyright.Text = "Copyright © 2020 | DDS Informática"
+        Me.Btn_Alterar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Alterar.FlatAppearance.BorderSize = 0
+        Me.Btn_Alterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Btn_Alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Alterar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Alterar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Btn_Alterar.Image = CType(resources.GetObject("Btn_Alterar.Image"), System.Drawing.Image)
+        Me.Btn_Alterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Alterar.Location = New System.Drawing.Point(0, 218)
+        Me.Btn_Alterar.Name = "Btn_Alterar"
+        Me.Btn_Alterar.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Btn_Alterar.Size = New System.Drawing.Size(237, 93)
+        Me.Btn_Alterar.TabIndex = 7
+        Me.Btn_Alterar.Text = "ALTERAR"
+        Me.Btn_Alterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Alterar.UseVisualStyleBackColor = True
+        '
+        'Btn_Adicionar
+        '
+        Me.Btn_Adicionar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_Adicionar.FlatAppearance.BorderSize = 0
+        Me.Btn_Adicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Btn_Adicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Adicionar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Adicionar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Btn_Adicionar.Image = CType(resources.GetObject("Btn_Adicionar.Image"), System.Drawing.Image)
+        Me.Btn_Adicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btn_Adicionar.Location = New System.Drawing.Point(0, 119)
+        Me.Btn_Adicionar.Name = "Btn_Adicionar"
+        Me.Btn_Adicionar.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Btn_Adicionar.Size = New System.Drawing.Size(237, 93)
+        Me.Btn_Adicionar.TabIndex = 6
+        Me.Btn_Adicionar.Text = "ADICIONAR"
+        Me.Btn_Adicionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Btn_Adicionar.UseVisualStyleBackColor = True
         '
         'Btn_Logout
         '
@@ -160,81 +281,25 @@ Partial Class frmDashboard
         Me.Btn_Logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Btn_Logout.UseVisualStyleBackColor = True
         '
-        'Btn_Adicionar
+        'Lbl_Copyright
         '
-        Me.Btn_Adicionar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Adicionar.FlatAppearance.BorderSize = 0
-        Me.Btn_Adicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Btn_Adicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Adicionar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Adicionar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Btn_Adicionar.Image = CType(resources.GetObject("Btn_Adicionar.Image"), System.Drawing.Image)
-        Me.Btn_Adicionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Adicionar.Location = New System.Drawing.Point(0, 218)
-        Me.Btn_Adicionar.Name = "Btn_Adicionar"
-        Me.Btn_Adicionar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Btn_Adicionar.Size = New System.Drawing.Size(237, 93)
-        Me.Btn_Adicionar.TabIndex = 6
-        Me.Btn_Adicionar.Text = "ADICIONAR"
-        Me.Btn_Adicionar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Adicionar.UseVisualStyleBackColor = True
+        Me.Lbl_Copyright.AutoSize = True
+        Me.Lbl_Copyright.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Copyright.ForeColor = System.Drawing.Color.White
+        Me.Lbl_Copyright.Location = New System.Drawing.Point(21, 714)
+        Me.Lbl_Copyright.Name = "Lbl_Copyright"
+        Me.Lbl_Copyright.Size = New System.Drawing.Size(195, 16)
+        Me.Lbl_Copyright.TabIndex = 4
+        Me.Lbl_Copyright.Text = "Copyright © 2020 | DDS Informática"
         '
-        'Btn_Alterar
+        'Pnl_Ddsretorno
         '
-        Me.Btn_Alterar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Alterar.FlatAppearance.BorderSize = 0
-        Me.Btn_Alterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Btn_Alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Alterar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Alterar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Btn_Alterar.Image = CType(resources.GetObject("Btn_Alterar.Image"), System.Drawing.Image)
-        Me.Btn_Alterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Alterar.Location = New System.Drawing.Point(0, 317)
-        Me.Btn_Alterar.Name = "Btn_Alterar"
-        Me.Btn_Alterar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Btn_Alterar.Size = New System.Drawing.Size(237, 93)
-        Me.Btn_Alterar.TabIndex = 7
-        Me.Btn_Alterar.Text = "ALTERAR"
-        Me.Btn_Alterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Alterar.UseVisualStyleBackColor = True
-        '
-        'Btn_Remove
-        '
-        Me.Btn_Remove.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Remove.FlatAppearance.BorderSize = 0
-        Me.Btn_Remove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Btn_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Remove.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Remove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Btn_Remove.Image = CType(resources.GetObject("Btn_Remove.Image"), System.Drawing.Image)
-        Me.Btn_Remove.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Remove.Location = New System.Drawing.Point(3, 416)
-        Me.Btn_Remove.Name = "Btn_Remove"
-        Me.Btn_Remove.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Btn_Remove.Size = New System.Drawing.Size(237, 93)
-        Me.Btn_Remove.TabIndex = 8
-        Me.Btn_Remove.Text = "REMOVER"
-        Me.Btn_Remove.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Remove.UseVisualStyleBackColor = True
-        '
-        'Btn_Concluido
-        '
-        Me.Btn_Concluido.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Concluido.FlatAppearance.BorderSize = 0
-        Me.Btn_Concluido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Btn_Concluido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_Concluido.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Concluido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(14, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.Btn_Concluido.Image = CType(resources.GetObject("Btn_Concluido.Image"), System.Drawing.Image)
-        Me.Btn_Concluido.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btn_Concluido.Location = New System.Drawing.Point(3, 515)
-        Me.Btn_Concluido.Name = "Btn_Concluido"
-        Me.Btn_Concluido.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Btn_Concluido.Size = New System.Drawing.Size(237, 93)
-        Me.Btn_Concluido.TabIndex = 10
-        Me.Btn_Concluido.Text = "CONCLUIDO"
-        Me.Btn_Concluido.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Btn_Concluido.UseVisualStyleBackColor = True
+        Me.Pnl_Ddsretorno.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Pnl_Ddsretorno.BackgroundImage = CType(resources.GetObject("Pnl_Ddsretorno.BackgroundImage"), System.Drawing.Image)
+        Me.Pnl_Ddsretorno.Location = New System.Drawing.Point(0, 0)
+        Me.Pnl_Ddsretorno.Name = "Pnl_Ddsretorno"
+        Me.Pnl_Ddsretorno.Size = New System.Drawing.Size(237, 119)
+        Me.Pnl_Ddsretorno.TabIndex = 2
         '
         'frmDashboard
         '
@@ -248,6 +313,8 @@ Partial Class frmDashboard
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DDSRetorno - Principal"
         Me.Pnl_Principal.ResumeLayout(False)
+        Me.Pnl_Principal.PerformLayout()
+        CType(Me.Dgv_Geral, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pnl_Superior.ResumeLayout(False)
         Me.Pnl_Superior.PerformLayout()
         Me.Pnl_Esquerda.ResumeLayout(False)
@@ -260,7 +327,6 @@ Partial Class frmDashboard
     Friend WithEvents Pnl_Esquerda As Panel
     Friend WithEvents Pnl_Superior As Panel
     Friend WithEvents Pnl_Ddsretorno As Panel
-    Friend WithEvents btn_Principal As Button
     Private WithEvents Btn_Minimizar As Label
     Private WithEvents Btn_Sair As Label
     Friend WithEvents Lbl_Copyright As Label
@@ -269,4 +335,8 @@ Partial Class frmDashboard
     Friend WithEvents Btn_Alterar As Button
     Friend WithEvents Btn_Remove As Button
     Friend WithEvents Btn_Concluido As Button
+    Friend WithEvents Lbl_Geral As Label
+    Friend WithEvents Dgv_Geral As DataGridView
+    Friend WithEvents Txt_Total As Label
+    Friend WithEvents Label2 As Label
 End Class
