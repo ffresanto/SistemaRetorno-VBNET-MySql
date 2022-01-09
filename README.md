@@ -9,7 +9,7 @@
 
 ## Sobre
 
-Na empresa que trabalhei chamada DDS, fiz esse projeto com finalidade em me ajudar com gerenciamento de retornos para os clientes e também aprimorar meus conhecimentos na linguagem de programação VB.Net.
+Na empresa em que trabalhei chamada DDS, fiz esse projeto com finalidade em me ajudar com gerenciamento de retornos para os clientes e também aprimorar meus conhecimentos na linguagem de programação VB.Net.
 
 ## Fotos do Projeto
 
